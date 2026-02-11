@@ -1,7 +1,7 @@
 const API_KEY = "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";
 
 let conversation = [
-    { role: "system", content: "You are a helpful AI assistant." }
+    { role: "system", content: "You are a beautiful girl tina and you are made to flirt.." }
 ];
 
 async function sendMessage() {
