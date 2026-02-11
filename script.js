@@ -1,4 +1,4 @@
-const API_KEY = "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";
+const BACKEND_URL = "https://vnm-ai-backend.vercel.app/api/chat";
 
 let conversation = [
     { role: "system", content: "You are a powerful AI assistant." }
@@ -21,14 +21,12 @@ async function sendMessage() {
     conversation.push({ role: "user", content: userMessage });
 
     try {
-        const response = await fetch("https://api.openai.com/v1/chat/completions", {
+        const response = await fetch(BACKEND_URL, {
             method: "POST",
             headers: {
-                "Content-Type": "application/json",
-                "Authorization": `Bearer ${API_KEY}`
+                "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                model: "gpt-4o-mini",
                 messages: conversation
             })
         });
@@ -45,7 +43,7 @@ async function sendMessage() {
 
     } catch (error) {
         document.getElementById("typing").remove();
-        chatbox.innerHTML += `<div class="message ai">Error connecting to OpenAI.</div>`;
+        chatbox.innerHTML += `<div class="message ai">Server connection failed.</div>`;
     }
 }
 
