@@ -1,7 +1,7 @@
 body {
     margin: 0;
     background: linear-gradient(135deg, #000000, #0f2027);
-    font-family: 'Courier New', monospace;
+    font-family: monospace;
     display: flex;
     justify-content: center;
     align-items: center;
